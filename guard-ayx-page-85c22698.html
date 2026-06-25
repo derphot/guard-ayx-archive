@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ayx · 日常查询与对照</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f9f9fa;
+      color: #1f2a3a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      max-width: 680px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.8rem 2.2rem;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.02);
+      transition: all 0.15s ease;
+    }
+    @media (max-width: 520px) {
+      body { padding: 1.2rem 0.8rem; }
+      .page { padding: 2rem 1.4rem; border-radius: 20px; }
+    }
+    .hero-kick {
+      font-size: 1.2rem;
+      font-weight: 360;
+      letter-spacing: 0.02em;
+      color: #5f6b7a;
+      margin-bottom: 0.4rem;
+      border-left: 3px solid #b3c2d1;
+      padding-left: 1rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-top: 0.6rem;
+      margin-bottom: 1.8rem;
+      color: #121c2c;
+    }
+    .intro {
+      font-size: 1.05rem;
+      color: #2b3749;
+      margin-bottom: 2.2rem;
+      padding-right: 0.4rem;
+    }
+    .intro a {
+      color: #1e3d6b;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 480;
+    }
+    .intro a:hover {
+      background: #eef2f7;
+      text-decoration: none;
+      border-radius: 2px;
+      padding: 0 2px;
+    }
+    .section-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #6f7e90;
+      margin-top: 2.6rem;
+      margin-bottom: 1rem;
+      font-weight: 400;
+      border-bottom: 1px solid #e6ecf2;
+      padding-bottom: 0.4rem;
+    }
+    .feature-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .feature-item {
+      padding: 0.8rem 1.2rem;
+      background: #f4f7fa;
+      border-radius: 14px;
+      transition: box-shadow 0.1s;
+    }
+    .feature-item strong {
+      display: block;
+      font-weight: 540;
+      font-size: 1.05rem;
+      color: #142433;
+      margin-bottom: 0.25rem;
+    }
+    .feature-item span {
+      color: #3a4b5e;
+      font-size: 0.98rem;
+    }
+    .scene-note {
+      margin-top: 2.2rem;
+      background: #f1f4f8;
+      padding: 1.6rem 1.8rem;
+      border-radius: 18px;
+      font-size: 0.98rem;
+      color: #1f2d3f;
+    }
+    .scene-note p {
+      margin-bottom: 0.9rem;
+    }
+    .scene-note p:last-child {
+      margin-bottom: 0;
+    }
+    .faq-short {
+      margin-top: 2.4rem;
+      padding-top: 1.6rem;
+    }
+    .faq-short details {
+      margin-bottom: 0.8rem;
+      border-bottom: 1px dashed #dce4ec;
+      padding-bottom: 0.7rem;
+    }
+    .faq-short summary {
+      font-weight: 480;
+      cursor: pointer;
+      color: #1a2a3e;
+      padding: 0.3rem 0;
+      font-size: 1rem;
+    }
+    .faq-short summary::marker {
+      color: #8195aa;
+    }
+    .faq-short details p {
+      margin-top: 0.5rem;
+      color: #33485f;
+      font-size: 0.95rem;
+      padding-left: 0.4rem;
+      line-height: 1.6;
+    }
+    .closing {
+      margin-top: 3rem;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e2e9f0;
+      font-size: 0.96rem;
+      color: #506072;
+      line-height: 1.7;
+    }
+    .closing a {
+      color: #1c3a5e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 460;
+    }
+    .closing a:hover {
+      background: #eef3f9;
+      border-radius: 2px;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #eef2f7;
+      margin: 1.8rem 0 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="hero-kick">一些日常查询，一点对照参考。</div>
+  <h1>随手翻查 · 安静对照</h1>
+
+  <div class="intro">
+    <p>有时只是想确认某个名称的写法，有时需要在几份资料之间来回比照。不必每次都从头搜索，打开 <a href="https://guard-ayx.com.cn">ayx</a> 就像翻一本常在手边的笔记——信息平铺在那里，结构清楚，没有多余装饰。你查你的，它静静待着。</p>
+    <p style="margin-top: 1rem;">这个站点整理了许多条目与分类，适合顺着索引延伸阅读，也适合只瞄一眼就合上。不催促，不打扰。</p>
+  </div>
+
+  <div class="section-label">日常中常用的几个特点</div>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <strong>条目清晰</strong>
+      <span>内容按类别与层级排列，标题、说明、相关链接一目了然，不用反复点开折叠菜单。</span>
+    </div>
+    <div class="feature-item">
+      <strong>便于对照</strong>
+      <span>同类信息常集中在一块区域，并排阅读时省去来回切换标签页的麻烦。</span>
+    </div>
+    <div class="feature-item">
+      <strong>轻量访问</strong>
+      <span>页面以文字信息为主，加载快，不依赖复杂脚本，即使网络一般也能正常浏览。</span>
+    </div>
+  </div>
+
+  <div class="scene-note">
+    <p><strong>一个常见的场景：</strong><br>你在撰写一份文档或核对某个术语，手边需要同时参考几个不同的来源。这时候，一个结构化的、不带广告与弹窗的页面会省心很多。把 <a href="https://guard-ayx.com.cn" style="text-decoration: underline; text-underline-offset: 3px;">ayx</a> 放在浏览器的一个固定标签页里，需要时切过去扫一眼，然后继续手上的工作。</p>
+    <p>又或者，你在闲暇时随便翻翻，顺着分类从一个条目读到另一个——不是刻意学习，只是保持一种温和的信息接触。</p>
+  </div>
+
+  <div class="faq-short">
+    <details>
+      <summary>这里的信息更新频率如何？</summary>
+      <p>内容会基于可公开的资料进行整理与补充，没有固定的“大版本发布”节奏，但会留意条目的准确性和时效性。</p>
+    </details>
+    <details>
+      <summary>可以直接引用或转发这里的条目吗？</summary>
+      <p>你可以把这里当作一个参考资料索引，引用时建议再核实一手来源。网站本身没有设置转载限制，但请保持内容原貌。</p>
+    </details>
+    <details>
+      <summary>移动端浏览体验怎么样？</summary>
+      <p>页面采用窄版式设计，在手机屏幕上同样清晰易读，无需缩放或横向滚动。</p>
+    </details>
+  </div>
+
+  <div class="closing">
+    <p>信息本身不需要喧哗。一个安静的、随时可以打开查阅的角落，比什么都实在。</p>
+    <p style="margin-top: 0.6rem;">如果你恰好需要这样一处地方，随时可以回来翻翻 <a href="https://guard-ayx.com.cn">ayx</a>。</p>
+  </div>
+</div>
+</body>
+</html>
