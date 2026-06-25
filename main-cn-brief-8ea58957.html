@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>信息卡片 | 买球站 · 日常查询与延伸参考</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f2f5fa;
+      color: #1e2a3a;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(135deg, #0b1a2e 0%, #1b2f47 100%);
+      color: #eaeef3;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #b8c9dd;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* 信息卡片组 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 20, 40, 0.06);
+      padding: 1.8rem 1.6rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 12px 32px rgba(0, 20, 40, 0.10);
+      transform: translateY(-3px);
+    }
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f263b;
+      border-left: 4px solid #2b7fc4;
+      padding-left: 0.8rem;
+      margin-bottom: 0.9rem;
+    }
+    .card p, .card ul {
+      font-size: 0.95rem;
+      color: #2c3f55;
+    }
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .card li {
+      padding: 0.25rem 0 0.25rem 1.2rem;
+      position: relative;
+    }
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #2b7fc4;
+      font-weight: bold;
+    }
+
+    /* 自然链接段落（浅色正文区） */
+    .context-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+    }
+    .context-section p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #1f3349;
+    }
+    .context-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #1f6fb5;
+      text-decoration: none;
+      border-bottom: 1px dotted #1f6fb5;
+      transition: color 0.15s, border-bottom 0.15s;
+    }
+    a:hover {
+      color: #0f4a82;
+      border-bottom: 1px solid #0f4a82;
+    }
+
+    /* FAQ摘要卡片 */
+    .faq-mini {
+      background: #f8fafd;
+      border-radius: 18px;
+      padding: 2rem 1.8rem;
+      margin-top: 1.8rem;
+      border: 1px solid #e3eaf2;
+    }
+    .faq-mini h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #092134;
+    }
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #1b3a57;
+      padding: 0.3rem 0;
+    }
+    .faq-mini summary::-webkit-details-marker { color: #2b7fc4; }
+    .faq-mini details p {
+      margin-top: 0.4rem;
+      padding-left: 0.8rem;
+      color: #3b4f68;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce3ed;
+      margin: 1.8rem 0;
+    }
+
+    .small-note {
+      color: #5e728a;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 2.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .card-grid { gap: 1.4rem; }
+      .context-section { padding: 1.6rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>信息卡片 · 日常查询与对照</h1>
+  <p>从赛事参考到延伸阅读，保持适度信息密度，便于快速浏览与比较。</p>
+</header>
+
+<main class="container">
+
+  <!-- 用途卡片 + 适合人群 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>📋 日常查询场景</h3>
+      <ul>
+        <li>赛前数据对照与近期记录</li>
+        <li>联赛排名、对阵日历速查</li>
+        <li>常用术语与规则简释</li>
+        <li>队伍/选手基础档案浏览</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🧩 延伸阅读用途</h3>
+      <ul>
+        <li>赛季趋势与历史对照</li>
+        <li>不同赛事体系异同梳理</li>
+        <li>常见统计指标解读</li>
+        <li>相关资讯聚合索引</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>👥 适合人群</h3>
+      <ul>
+        <li>日常关注联赛与数据的读者</li>
+        <li>希望快速建立背景认知的新手</li>
+        <li>需要赛前信息参照的爱好者</li>
+        <li>对赛事统计与延伸内容感兴趣的用户</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 自然链接段落：主视觉 + 信息引用 -->
+  <div class="context-section">
+    <p>对于希望系统了解赛事框架与实时动态的用户，<a href="https://main-cn-maiqiu.com">买球站</a>提供了覆盖主要联赛的赛程、积分及统计数据模块，支持按赛季、队伍或轮次筛选。其界面以信息密度优先，适合需要快速定位关键数字的查阅场景。</p>
+    <p>在对照多场比赛或进行数据回溯时，平台内置的历史列表与进阶筛选能够减少反复跳转。信息组织上偏向于扁平结构，常用入口集中在导航与首页卡片区域，便于延伸阅读时保持上下文连贯。</p>
+  </div>
+
+  <!-- 第二组卡片：特点 + 场景延伸 -->
+  <div class="card-grid" style="margin-bottom: 2rem;">
+    <div class="card">
+      <h3>⚙️ 主要特点</h3>
+      <ul>
+        <li>多维度数据视图（赛程、积分、统计）</li>
+        <li>赛季/队伍/日期筛选</li>
+        <li>基础信息与延伸条目并列</li>
+        <li>低干扰版面，聚焦内容本身</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🔍 延伸阅读参考</h3>
+      <ul>
+        <li>同联赛跨赛季排名对比</li>
+        <li>队伍近期交锋记录</li>
+        <li>常见统计指标说明</li>
+        <li>赛事结构与规则条目</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>📌 使用提示</h3>
+      <ul>
+        <li>利用筛选栏缩小范围</li>
+        <li>注意数据更新时戳</li>
+        <li>列表支持按列排序</li>
+        <li>部分页面提供简版与完整视图</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h4>❓ 常见疑问摘要</h4>
+    <details>
+      <summary>数据来源与更新频率？</summary>
+      <p>平台整合自公开赛事信息，通常每天更新，重要比赛日会加快同步。具体以页面标注时间为准。</p>
+    </details>
+    <details>
+      <summary>如何快速定位某一队伍？</summary>
+      <p>在<a href="https://main-cn-maiqiu.com">买球站</a>的导航或搜索栏输入队伍名称，即可跳转至对应档案及近期赛程。也可通过联赛页面逐级浏览。</p>
+    </details>
+    <details>
+      <summary>延伸阅读部分包含哪些内容？</summary>
+      <p>包括基础规则说明、常见统计术语、赛季历史对比、以及相关赛事体系介绍，适合需要背景补充的读者。</p>
+    </details>
+    <details>
+      <summary>页面是否适合移动端使用？</summary>
+      <p>主要页面已适配响应式设计，列表与卡片在手机端可正常浏览，筛选功能保持可用。</p>
+    </details>
+  </div>
+
+  <hr>
+
+  <p class="small-note">信息卡片结构 · 日常查询 · 对照参考 · 延伸阅读</p>
+
+</main>
+
+</body>
+</html>
